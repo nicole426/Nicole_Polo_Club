@@ -1,548 +1,399 @@
 <!DOCTYPE html>
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+<html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta content="IE=edge">
-<title>Current Listings at The Polo Club | Nicole Polo Club Newsletter</title>
-<!--[if mso]>
-<xml>
-96
-</xml>
-<![endif]-->
-<style type="text/css">
-@media only screen and (max-width: 600px) {
-  .email-container { width: 100% !important; }
-  .bio-photo { width: 120px !important; height: 120px !important; object-fit: cover !important; object-position: center top !important; }
-  .bio-cell { display: block !important; width: 100% !important; text-align: center !important; }
-  .btn-cell { display: block !important; width: 100% !important; margin-bottom: 8px !important; text-align: center !important; }
-}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Polo Club - Current Listings | The Edmund Bogen Team</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      background-color: #f5f5f5;
+      padding: 20px;
+    }
+    .container {
+      max-width: 1400px;
+      margin: 0 auto;
+      background: white;
+      padding: 40px;
+    }
+    .header {
+      border-bottom: 4px solid #00a8e1;
+      padding-bottom: 20px;
+      margin-bottom: 30px;
+    }
+    .header h1 {
+      color: #1a3e5c;
+      font-size: 2.5em;
+      font-weight: 300;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+    .header-subtitle {
+      color: #666;
+      font-size: 1.1em;
+      margin-top: 10px;
+    }
+    .summary-stats {
+      display: flex;
+      gap: 30px;
+      margin-bottom: 30px;
+      flex-wrap: wrap;
+    }
+    .summary-stat {
+      background: #f8fbff;
+      padding: 20px 30px;
+      border-radius: 8px;
+      border-left: 4px solid #00a8e1;
+    }
+    .summary-stat-label {
+      color: #666;
+      font-size: 0.85em;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+    .summary-stat-value {
+      color: #1a3e5c;
+      font-size: 1.8em;
+      font-weight: 600;
+      margin-top: 5px;
+    }
+    .listing-card {
+      background: white;
+      border: 1px solid #e8e8e8;
+      border-left: 4px solid #00a8e1;
+      padding: 25px 25px 25px 30px;
+      margin-bottom: 20px;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 20px;
+      align-items: center;
+      transition: all 0.3s ease;
+    }
+    .listing-card:hover {
+      border-left-color: #1a3e5c;
+      box-shadow: 0 4px 20px rgba(26, 62, 92, 0.15);
+      transform: translateX(5px);
+    }
+    .listing-card.price-reduced { border-left-color: #cc0000; }
+    .listing-address {
+      color: #1a3e5c;
+      font-size: 1.4em;
+      font-weight: 500;
+      margin-bottom: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+    }
+    .listing-badge {
+      display: inline-block;
+      padding: 3px 10px;
+      font-size: 0.7em;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      border-radius: 3px;
+      margin-left: 10px;
+      vertical-align: middle;
+    }
+    .badge-price-reduced { background: #fff3cd; color: #856404; }
+    .badge-type { background: #e8f4f8; color: #1a3e5c; }
+    .listing-price {
+      color: #000000;
+      font-size: 2em;
+      font-weight: 300;
+      margin-bottom: 15px;
+    }
+    .listing-details {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+      gap: 15px;
+      margin-bottom: 15px;
+    }
+    .listing-detail-item { display: flex; flex-direction: column; }
+    .listing-detail-label {
+      color: #666;
+      font-size: 0.75em;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 5px;
+    }
+    .listing-detail-value {
+      color: #1a3e5c;
+      font-size: 1.1em;
+      font-weight: 600;
+    }
+    .listing-mls {
+      display: inline-block;
+      background: #f4f4f4;
+      color: #1a3e5c;
+      padding: 8px 15px;
+      font-size: 0.85em;
+      font-weight: 500;
+      margin-top: 10px;
+      letter-spacing: 0.05em;
+    }
+    .listing-sub {
+      color: #666;
+      font-size: 0.85em;
+      margin-top: 5px;
+    }
+    .view-listing-btn {
+      background: #00a8e1;
+      color: white;
+      padding: 14px 30px;
+      text-decoration: none;
+      font-size: 0.95em;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      display: inline-block;
+      transition: all 0.3s ease;
+      border-radius: 4px;
+    }
+    .view-listing-btn:hover {
+      background: #0088b8;
+      transform: translateY(-2px);
+    }
+    .back-button {
+      background: #1a3e5c;
+      color: white;
+      padding: 12px 25px;
+      text-decoration: none;
+      font-size: 0.9em;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      display: inline-block;
+      margin-bottom: 20px;
+      border-radius: 4px;
+    }
+    .back-button:hover { background: #0d1f2d; }
+    @media (max-width: 768px) {
+      .listing-card { grid-template-columns: 1fr; }
+      .listing-cta { text-align: center; }
+      .summary-stats { flex-direction: column; }
+    }
+  </style>
 </head>
-<body style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; margin: 0; padding: 0; background-color: #f4f4f4; font-family: Arial, sans-serif;">
+<body>
+  <div class="container">
 
-<!-- Outer wrapper -->
-<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; background-color: #f4f4f4;" bgcolor="#f4f4f4">
-<tr>
-<td align="center" style="padding: 20px 10px;">
+    <a href="index.html" class="back-button">&larr; Back to Newsletter</a>
 
-<!-- Email container -->
-<table role="presentation" class="email-container" width="100%" cellpadding="0" cellspacing="0" border="0" style="border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; max-width: 600px; width: 100%; background-color: #ffffff;" bgcolor="#ffffff">
+    <div class="header">
+      <p style="color: #00a8e1; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 10px;">Active Listings | March 2026</p>
+      <h1>The Polo Club &mdash; Available Listings</h1>
+      <p class="header-subtitle">15 Active Listings &mdash; Boca Raton &amp; Delray Beach</p>
+    </div>
 
-<!-- ============================================ -->
-<!-- HEADER -->
-<!-- ============================================ -->
-<tr>
-<td style="background: linear-gradient(135deg, #1a3e5c 0%, #0d2137 100%); padding: 24px 30px; text-align: center;">
-  <a href="index.html" style="text-decoration: none;">
-    <img src="https://edmundbogen.github.io/market-dashboard-2026/EBT-Logo-WHITE-V.png" alt="The Edmund Bogen Team" width="180" style="border: 0; outline: none; text-decoration: none; -ms-interpolation-mode: bicubic; display: inline-block; width: 180px; height: auto; margin: 0 auto;">
-  </a>
-</td>
-</tr>
+    <div class="summary-stats">
+      <div class="summary-stat">
+        <div class="summary-stat-label">Price Range</div>
+        <div class="summary-stat-value">$479K - $8.6M</div>
+      </div>
+      <div class="summary-stat">
+        <div class="summary-stat-label">Active Listings</div>
+        <div class="summary-stat-value">15</div>
+      </div>
+      <div class="summary-stat">
+        <div class="summary-stat-label">Property Types</div>
+        <div class="summary-stat-value">SFH / TH / Condo</div>
+      </div>
+      <div class="summary-stat">
+        <div class="summary-stat-label">Community</div>
+        <div class="summary-stat-value">The Polo Club</div>
+      </div>
+    </div>
 
-<!-- ============================================ -->
-<!-- LISTINGS TITLE BAR -->
-<!-- ============================================ -->
-<tr>
-<td style="background-color: #1a3e5c; padding: 20px 30px; text-align: center;">
-  <h1 style="margin: 0; font-family: Arial, sans-serif; font-size: 22px; font-weight: 300; letter-spacing: 3px; text-transform: uppercase; color: #ffffff; line-height: 1.3;">Active Listings<br>at Polo Club</h1>
-  <p style="margin: 10px 0 0 0; font-family: Arial, sans-serif; font-size: 13px; color: #8cb4d5; letter-spacing: 2px; text-transform: uppercase;">15 Active Listings &mdash; Boca Raton, FL 33496</p>
-</td>
-</tr>
+    <!-- Listing 1: $8,600,000 -->
+    <div class="listing-card">
+      <div class="listing-info">
+        <div class="listing-address">16600 Senterra Drive, Delray Beach</div>
+        <div class="listing-price">$8,600,000</div>
+        <div class="listing-sub">Royal Hidden Cove &bull; Single Family &bull; Built 2026</div>
+        <div class="listing-mls">MLS#: RX-11136515 | 5 BD / 6.1 BA / 6,069 SF | Lot: 15,083 SF</div>
+      </div>
+      <div class="listing-cta">
+        <a href="https://bogenhomes.com/homes-for-sale-search-advanced/" target="_blank" class="view-listing-btn">View Details</a>
+      </div>
+    </div>
 
-<!-- ============================================ -->
-<!-- LISTINGS INTRO -->
-<!-- ============================================ -->
-<tr>
-<td style="background-color: #ffffff; padding: 24px 30px;">
-  <p style="margin: 0; font-family: Arial, sans-serif; font-size: 15px; color: #333333; line-height: 1.6;">
-    15 active listings across The Polo Club's premier neighborhoods in Boca Raton and Delray Beach. From luxury estates to elegant condos &mdash; discover your perfect home.
-  </p>
-</td>
-</tr>
+    <!-- Listing 2: $7,775,000 -->
+    <div class="listing-card">
+      <div class="listing-info">
+        <div class="listing-address">16670 Senterra Drive, Delray Beach</div>
+        <div class="listing-price">$7,775,000</div>
+        <div class="listing-sub">Royal Hidden Cove &bull; Single Family &bull; Built 1991</div>
+        <div class="listing-mls">MLS#: RX-11129141 | 4 BD / 5.1 BA / 4,394 SF | Pool | Lot: 25,345 SF</div>
+      </div>
+      <div class="listing-cta">
+        <a href="https://bogenhomes.com/homes-for-sale-search-advanced/" target="_blank" class="view-listing-btn">View Details</a>
+      </div>
+    </div>
 
-<!-- ============================================ -->
-<!-- LISTING CARDS -->
-<!-- ============================================ -->
-<tr>
-<td style="background-color: #ffffff; padding: 0 20px 24px 20px;">
+    <!-- Listing 3: $2,100,000 -->
+    <div class="listing-card">
+      <div class="listing-info">
+        <div class="listing-address">5537 Steeple Chase, Boca Raton</div>
+        <div class="listing-price">$2,100,000</div>
+        <div class="listing-sub">Steeple Chase &bull; Single Family &bull; Built 1987</div>
+        <div class="listing-mls">MLS#: RX-11157480 | 3 BD / 3 BA / 2,477 SF | Lot: 7,616 SF</div>
+      </div>
+      <div class="listing-cta">
+        <a href="https://bogenhomes.com/homes-for-sale-search-advanced/" target="_blank" class="view-listing-btn">View Details</a>
+      </div>
+    </div>
 
-<!-- LISTING 1 -->
-<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; margin-bottom: 12px;">
-<tr>
-<td style="background-color: #f8fbff; border: 1px solid #e0e8f0; border-radius: 6px; overflow: hidden;">
-  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="border-collapse: collapse;">
-    <tr>
-      <td style="background-color: #1a3e5c; padding: 12px 16px;">
-        <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="border-collapse: collapse;">
-          <tr>
-            <td style="font-family: Arial, sans-serif; font-size: 22px; font-weight: 700; color: #ffffff;">$8,600,000</td>
-            <td align="right" style="font-family: Arial, sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 1px; color: #8cb4d5; text-transform: uppercase;">SINGLE FAMILY</td>
-          </tr>
-        </table>
-      </td>
-    </tr>
-    <tr>
-      <td style="padding: 14px 16px;">
-        <p style="margin: 0 0 4px 0; font-family: Arial, sans-serif; font-size: 15px; font-weight: 700; color: #1a3e5c;">16600 Senterra Drive</p>
-        <p style="margin: 0 0 8px 0; font-family: Arial, sans-serif; font-size: 13px; color: #666666;">Delray Beach, FL 33484 &bull; Royal Hidden Cove</p>
-        <p style="margin: 0 0 4px 0; font-family: Arial, sans-serif; font-size: 13px; color: #333333;"><strong>5</strong> BD &nbsp;&bull;&nbsp; <strong>6.1</strong> BA &nbsp;&bull;&nbsp; <strong>6,069</strong> SF &nbsp;&bull;&nbsp; Built <strong>2026</strong></p>
-        <p style="margin: 4px 0 0 0; font-family: Arial, sans-serif; font-size: 11px; color: #999999;">MLS# RX-11136515 &bull; Lot: 15,083 SF</p>
-      </td>
-    </tr>
-  </table>
-</td>
-</tr>
-</table>
+    <!-- Listing 4: $1,699,000 -->
+    <div class="listing-card">
+      <div class="listing-info">
+        <div class="listing-address">6468 Polo Pointe Way, Delray Beach</div>
+        <div class="listing-price">$1,699,000</div>
+        <div class="listing-sub">Crystal Bay &bull; Single Family &bull; Built 2002</div>
+        <div class="listing-mls">MLS#: RX-11148746 | 4 BD / 3.1 BA / 3,202 SF | Pool | Lot: 7,800 SF</div>
+      </div>
+      <div class="listing-cta">
+        <a href="https://bogenhomes.com/homes-for-sale-search-advanced/" target="_blank" class="view-listing-btn">View Details</a>
+      </div>
+    </div>
 
-<!-- LISTING 2 -->
-<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; margin-bottom: 12px;">
-<tr>
-<td style="background-color: #f8fbff; border: 1px solid #e0e8f0; border-radius: 6px; overflow: hidden;">
-  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="border-collapse: collapse;">
-    <tr>
-      <td style="background-color: #1a3e5c; padding: 12px 16px;">
-        <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="border-collapse: collapse;">
-          <tr>
-            <td style="font-family: Arial, sans-serif; font-size: 22px; font-weight: 700; color: #ffffff;">$7,775,000</td>
-            <td align="right" style="font-family: Arial, sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 1px; color: #8cb4d5; text-transform: uppercase;">SINGLE FAMILY</td>
-          </tr>
-        </table>
-      </td>
-    </tr>
-    <tr>
-      <td style="padding: 14px 16px;">
-        <p style="margin: 0 0 4px 0; font-family: Arial, sans-serif; font-size: 15px; font-weight: 700; color: #1a3e5c;">16670 Senterra Drive</p>
-        <p style="margin: 0 0 8px 0; font-family: Arial, sans-serif; font-size: 13px; color: #666666;">Delray Beach, FL 33484 &bull; Royal Hidden Cove</p>
-        <p style="margin: 0 0 4px 0; font-family: Arial, sans-serif; font-size: 13px; color: #333333;"><strong>4</strong> BD &nbsp;&bull;&nbsp; <strong>5.1</strong> BA &nbsp;&bull;&nbsp; <strong>4,394</strong> SF &nbsp;&bull;&nbsp; Built <strong>1991</strong></p>
-        <p style="margin: 4px 0 0 0; font-family: Arial, sans-serif; font-size: 11px; color: #999999;">MLS# RX-11129141 &bull; Pool &bull; Lot: 25,345 SF</p>
-      </td>
-    </tr>
-  </table>
-</td>
-</tr>
-</table>
+    <!-- Listing 5: $1,025,000 - PRICE REDUCED -->
+    <div class="listing-card price-reduced">
+      <div class="listing-info">
+        <div class="listing-address">5061 Via De Amalfi Drive, Boca Raton <span class="listing-badge badge-price-reduced">Price Reduced</span></div>
+        <div class="listing-price">$1,025,000</div>
+        <div class="listing-sub">Ville De Capri &bull; Single Family &bull; Built 1986</div>
+        <div class="listing-mls">MLS#: RX-11161677 | 3 BD / 3 BA / 1,744 SF | Pool | Lot: 7,863 SF</div>
+      </div>
+      <div class="listing-cta">
+        <a href="https://bogenhomes.com/homes-for-sale-search-advanced/" target="_blank" class="view-listing-btn">View Details</a>
+      </div>
+    </div>
 
-<!-- LISTING 3 -->
-<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; margin-bottom: 12px;">
-<tr>
-<td style="background-color: #f8fbff; border: 1px solid #e0e8f0; border-radius: 6px; overflow: hidden;">
-  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="border-collapse: collapse;">
-    <tr>
-      <td style="background-color: #1a3e5c; padding: 12px 16px;">
-        <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="border-collapse: collapse;">
-          <tr>
-            <td style="font-family: Arial, sans-serif; font-size: 22px; font-weight: 700; color: #ffffff;">$2,100,000</td>
-            <td align="right" style="font-family: Arial, sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 1px; color: #8cb4d5; text-transform: uppercase;">SINGLE FAMILY</td>
-          </tr>
-        </table>
-      </td>
-    </tr>
-    <tr>
-      <td style="padding: 14px 16px;">
-        <p style="margin: 0 0 4px 0; font-family: Arial, sans-serif; font-size: 15px; font-weight: 700; color: #1a3e5c;">5537 Steeple Chase</p>
-        <p style="margin: 0 0 8px 0; font-family: Arial, sans-serif; font-size: 13px; color: #666666;">Boca Raton, FL 33496 &bull; Steeple Chase</p>
-        <p style="margin: 0 0 4px 0; font-family: Arial, sans-serif; font-size: 13px; color: #333333;"><strong>3</strong> BD &nbsp;&bull;&nbsp; <strong>3</strong> BA &nbsp;&bull;&nbsp; <strong>2,477</strong> SF &nbsp;&bull;&nbsp; Built <strong>1987</strong></p>
-        <p style="margin: 4px 0 0 0; font-family: Arial, sans-serif; font-size: 11px; color: #999999;">MLS# RX-11157480 &bull; Lot: 7,616 SF</p>
-      </td>
-    </tr>
-  </table>
-</td>
-</tr>
-</table>
+    <!-- Listing 6: $995,000 -->
+    <div class="listing-card">
+      <div class="listing-info">
+        <div class="listing-address">6237 San Michel Way, Delray Beach</div>
+        <div class="listing-price">$995,000</div>
+        <div class="listing-sub">Portofino &bull; Townhome &bull; Built 1990</div>
+        <div class="listing-mls">MLS#: RX-11159006 | 3 BD / 2.1 BA / 2,366 SF | Pool | Lot: 5,902 SF</div>
+      </div>
+      <div class="listing-cta">
+        <a href="https://bogenhomes.com/homes-for-sale-search-advanced/" target="_blank" class="view-listing-btn">View Details</a>
+      </div>
+    </div>
 
-<!-- LISTING 4 -->
-<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; margin-bottom: 12px;">
-<tr>
-<td style="background-color: #f8fbff; border: 1px solid #e0e8f0; border-radius: 6px; overflow: hidden;">
-  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="border-collapse: collapse;">
-    <tr>
-      <td style="background-color: #1a3e5c; padding: 12px 16px;">
-        <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="border-collapse: collapse;">
-          <tr>
-            <td style="font-family: Arial, sans-serif; font-size: 22px; font-weight: 700; color: #ffffff;">$1,699,000</td>
-            <td align="right" style="font-family: Arial, sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 1px; color: #8cb4d5; text-transform: uppercase;">SINGLE FAMILY</td>
-          </tr>
-        </table>
-      </td>
-    </tr>
-    <tr>
-      <td style="padding: 14px 16px;">
-        <p style="margin: 0 0 4px 0; font-family: Arial, sans-serif; font-size: 15px; font-weight: 700; color: #1a3e5c;">6468 Polo Pointe Way</p>
-        <p style="margin: 0 0 8px 0; font-family: Arial, sans-serif; font-size: 13px; color: #666666;">Delray Beach, FL 33484 &bull; Crystal Bay</p>
-        <p style="margin: 0 0 4px 0; font-family: Arial, sans-serif; font-size: 13px; color: #333333;"><strong>4</strong> BD &nbsp;&bull;&nbsp; <strong>3.1</strong> BA &nbsp;&bull;&nbsp; <strong>3,202</strong> SF &nbsp;&bull;&nbsp; Built <strong>2002</strong></p>
-        <p style="margin: 4px 0 0 0; font-family: Arial, sans-serif; font-size: 11px; color: #999999;">MLS# RX-11148746 &bull; Pool &bull; Lot: 7,800 SF</p>
-      </td>
-    </tr>
-  </table>
-</td>
-</tr>
-</table>
+    <!-- Listing 7: $995,000 -->
+    <div class="listing-card">
+      <div class="listing-info">
+        <div class="listing-address">5097 Windsor Parke Drive, Boca Raton</div>
+        <div class="listing-price">$995,000</div>
+        <div class="listing-sub">Windsor Parke &bull; Townhome &bull; Built 1989</div>
+        <div class="listing-mls">MLS#: RX-11162920 | 3 BD / 2 BA / 1,623 SF | Pool</div>
+      </div>
+      <div class="listing-cta">
+        <a href="https://bogenhomes.com/homes-for-sale-search-advanced/" target="_blank" class="view-listing-btn">View Details</a>
+      </div>
+    </div>
 
-<!-- LISTING 5 - PRICE REDUCED -->
-<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; margin-bottom: 12px;">
-<tr>
-<td style="background-color: #f8fbff; border: 1px solid #e0e8f0; border-radius: 6px; overflow: hidden;">
-  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="border-collapse: collapse;">
-    <tr>
-      <td style="background-color: #1a3e5c; padding: 12px 16px;">
-        <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="border-collapse: collapse;">
-          <tr>
-            <td>
-              <span style="font-family: Arial, sans-serif; font-size: 22px; font-weight: 700; color: #ffffff;">$1,025,000</span>
-              <span style="font-family: Arial, sans-serif; font-size: 10px; font-weight: 700; color: #ffffff; background-color: #cc0000; padding: 3px 8px; border-radius: 3px; margin-left: 8px;">PRICE REDUCED</span>
-            </td>
-            <td align="right" style="font-family: Arial, sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 1px; color: #8cb4d5; text-transform: uppercase;">SINGLE FAMILY</td>
-          </tr>
-        </table>
-      </td>
-    </tr>
-    <tr>
-      <td style="padding: 14px 16px;">
-        <p style="margin: 0 0 4px 0; font-family: Arial, sans-serif; font-size: 15px; font-weight: 700; color: #1a3e5c;">5061 Via De Amalfi Drive</p>
-        <p style="margin: 0 0 8px 0; font-family: Arial, sans-serif; font-size: 13px; color: #666666;">Boca Raton, FL 33496 &bull; Ville De Capri</p>
-        <p style="margin: 0 0 4px 0; font-family: Arial, sans-serif; font-size: 13px; color: #333333;"><strong>3</strong> BD &nbsp;&bull;&nbsp; <strong>3</strong> BA &nbsp;&bull;&nbsp; <strong>1,744</strong> SF &nbsp;&bull;&nbsp; Built <strong>1986</strong></p>
-        <p style="margin: 4px 0 0 0; font-family: Arial, sans-serif; font-size: 11px; color: #999999;">MLS# RX-11161677 &bull; Pool &bull; Lot: 7,863 SF</p>
-      </td>
-    </tr>
-  </table>
-</td>
-</tr>
-</table>
+    <!-- Listing 8: $949,000 -->
+    <div class="listing-card">
+      <div class="listing-info">
+        <div class="listing-address">17629 Ashbourne Way A, Boca Raton</div>
+        <div class="listing-price">$949,000</div>
+        <div class="listing-sub">Ashbourne &bull; Condo &bull; Built 1987</div>
+        <div class="listing-mls">MLS#: RX-11158266 | 3 BD / 2.1 BA / 1,867 SF</div>
+      </div>
+      <div class="listing-cta">
+        <a href="https://bogenhomes.com/homes-for-sale-search-advanced/" target="_blank" class="view-listing-btn">View Details</a>
+      </div>
+    </div>
 
-<!-- LISTING 6 -->
-<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; margin-bottom: 12px;">
-<tr>
-<td style="background-color: #f8fbff; border: 1px solid #e0e8f0; border-radius: 6px; overflow: hidden;">
-  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="border-collapse: collapse;">
-    <tr>
-      <td style="background-color: #1a3e5c; padding: 12px 16px;">
-        <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="border-collapse: collapse;">
-          <tr>
-            <td style="font-family: Arial, sans-serif; font-size: 22px; font-weight: 700; color: #ffffff;">$995,000</td>
-            <td align="right" style="font-family: Arial, sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 1px; color: #8cb4d5; text-transform: uppercase;">TOWNHOME</td>
-          </tr>
-        </table>
-      </td>
-    </tr>
-    <tr>
-      <td style="padding: 14px 16px;">
-        <p style="margin: 0 0 4px 0; font-family: Arial, sans-serif; font-size: 15px; font-weight: 700; color: #1a3e5c;">6237 San Michel Way</p>
-        <p style="margin: 0 0 8px 0; font-family: Arial, sans-serif; font-size: 13px; color: #666666;">Delray Beach, FL 33484 &bull; Portofino</p>
-        <p style="margin: 0 0 4px 0; font-family: Arial, sans-serif; font-size: 13px; color: #333333;"><strong>3</strong> BD &nbsp;&bull;&nbsp; <strong>2.1</strong> BA &nbsp;&bull;&nbsp; <strong>2,366</strong> SF &nbsp;&bull;&nbsp; Built <strong>1990</strong></p>
-        <p style="margin: 4px 0 0 0; font-family: Arial, sans-serif; font-size: 11px; color: #999999;">MLS# RX-11159006 &bull; Pool &bull; Lot: 5,902 SF</p>
-      </td>
-    </tr>
-  </table>
-</td>
-</tr>
-</table>
+    <!-- Listing 9: $730,000 -->
+    <div class="listing-card">
+      <div class="listing-info">
+        <div class="listing-address">5158 Windsor Parke Drive, Boca Raton</div>
+        <div class="listing-price">$730,000</div>
+        <div class="listing-sub">Windsor Parke &bull; Townhome &bull; Built 1989</div>
+        <div class="listing-mls">MLS#: RX-11100001 | 3 BD / 2 BA / 1,760 SF | Pool</div>
+      </div>
+      <div class="listing-cta">
+        <a href="https://bogenhomes.com/homes-for-sale-search-advanced/" target="_blank" class="view-listing-btn">View Details</a>
+      </div>
+    </div>
 
-<!-- LISTING 7 -->
-<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; margin-bottom: 12px;">
-<tr>
-<td style="background-color: #f8fbff; border: 1px solid #e0e8f0; border-radius: 6px; overflow: hidden;">
-  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="border-collapse: collapse;">
-    <tr>
-      <td style="background-color: #1a3e5c; padding: 12px 16px;">
-        <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="border-collapse: collapse;">
-          <tr>
-            <td style="font-family: Arial, sans-serif; font-size: 22px; font-weight: 700; color: #ffffff;">$995,000</td>
-            <td align="right" style="font-family: Arial, sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 1px; color: #8cb4d5; text-transform: uppercase;">TOWNHOME</td>
-          </tr>
-        </table>
-      </td>
-    </tr>
-    <tr>
-      <td style="padding: 14px 16px;">
-        <p style="margin: 0 0 4px 0; font-family: Arial, sans-serif; font-size: 15px; font-weight: 700; color: #1a3e5c;">5097 Windsor Parke Drive</p>
-        <p style="margin: 0 0 8px 0; font-family: Arial, sans-serif; font-size: 13px; color: #666666;">Boca Raton, FL 33496 &bull; Windsor Parke</p>
-        <p style="margin: 0 0 4px 0; font-family: Arial, sans-serif; font-size: 13px; color: #333333;"><strong>3</strong> BD &nbsp;&bull;&nbsp; <strong>2</strong> BA &nbsp;&bull;&nbsp; <strong>1,623</strong> SF &nbsp;&bull;&nbsp; Built <strong>1989</strong></p>
-        <p style="margin: 4px 0 0 0; font-family: Arial, sans-serif; font-size: 11px; color: #999999;">MLS# RX-11162920 &bull; Pool</p>
-      </td>
-    </tr>
-  </table>
-</td>
-</tr>
-</table>
+    <!-- Listing 10: $669,000 -->
+    <div class="listing-card">
+      <div class="listing-info">
+        <div class="listing-address">5142 Lake Catalina Drive B, Boca Raton</div>
+        <div class="listing-price">$669,000</div>
+        <div class="listing-sub">Catalina &bull; Condo &bull; Built 1989</div>
+        <div class="listing-mls">MLS#: RX-11164791 | 3 BD / 2.1 BA / 2,053 SF | Pool</div>
+      </div>
+      <div class="listing-cta">
+        <a href="https://bogenhomes.com/homes-for-sale-search-advanced/" target="_blank" class="view-listing-btn">View Details</a>
+      </div>
+    </div>
 
-<!-- LISTING 8 -->
-<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; margin-bottom: 12px;">
-<tr>
-<td style="background-color: #f8fbff; border: 1px solid #e0e8f0; border-radius: 6px; overflow: hidden;">
-  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="border-collapse: collapse;">
-    <tr>
-      <td style="background-color: #1a3e5c; padding: 12px 16px;">
-        <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="border-collapse: collapse;">
-          <tr>
-            <td style="font-family: Arial, sans-serif; font-size: 22px; font-weight: 700; color: #ffffff;">$949,000</td>
-            <td align="right" style="font-family: Arial, sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 1px; color: #8cb4d5; text-transform: uppercase;">CONDO</td>
-          </tr>
-        </table>
-      </td>
-    </tr>
-    <tr>
-      <td style="padding: 14px 16px;">
-        <p style="margin: 0 0 4px 0; font-family: Arial, sans-serif; font-size: 15px; font-weight: 700; color: #1a3e5c;">17629 Ashbourne Way A</p>
-        <p style="margin: 0 0 8px 0; font-family: Arial, sans-serif; font-size: 13px; color: #666666;">Boca Raton, FL 33496 &bull; Ashbourne</p>
-        <p style="margin: 0 0 4px 0; font-family: Arial, sans-serif; font-size: 13px; color: #333333;"><strong>3</strong> BD &nbsp;&bull;&nbsp; <strong>2.1</strong> BA &nbsp;&bull;&nbsp; <strong>1,867</strong> SF &nbsp;&bull;&nbsp; Built <strong>1987</strong></p>
-        <p style="margin: 4px 0 0 0; font-family: Arial, sans-serif; font-size: 11px; color: #999999;">MLS# RX-11158266</p>
-      </td>
-    </tr>
-  </table>
-</td>
-</tr>
-</table>
+    <!-- Listing 11: $629,000 -->
+    <div class="listing-card">
+      <div class="listing-info">
+        <div class="listing-address">5184 Lake Catalina Drive D, Boca Raton</div>
+        <div class="listing-price">$629,000</div>
+        <div class="listing-sub">Catalina &bull; Condo &bull; Built 1989</div>
+        <div class="listing-mls">MLS#: RX-11131133 | 3 BD / 2.1 BA / 2,053 SF | Pool</div>
+      </div>
+      <div class="listing-cta">
+        <a href="https://bogenhomes.com/homes-for-sale-search-advanced/" target="_blank" class="view-listing-btn">View Details</a>
+      </div>
+    </div>
 
-<!-- LISTING 9 -->
-<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; margin-bottom: 12px;">
-<tr>
-<td style="background-color: #f8fbff; border: 1px solid #e0e8f0; border-radius: 6px; overflow: hidden;">
-  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="border-collapse: collapse;">
-    <tr>
-      <td style="background-color: #1a3e5c; padding: 12px 16px;">
-        <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="border-collapse: collapse;">
-          <tr>
-            <td style="font-family: Arial, sans-serif; font-size: 22px; font-weight: 700; color: #ffffff;">$730,000</td>
-            <td align="right" style="font-family: Arial, sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 1px; color: #8cb4d5; text-transform: uppercase;">TOWNHOME</td>
-          </tr>
-        </table>
-      </td>
-    </tr>
-    <tr>
-      <td style="padding: 14px 16px;">
-        <p style="margin: 0 0 4px 0; font-family: Arial, sans-serif; font-size: 15px; font-weight: 700; color: #1a3e5c;">5158 Windsor Parke Drive</p>
-        <p style="margin: 0 0 8px 0; font-family: Arial, sans-serif; font-size: 13px; color: #666666;">Boca Raton, FL 33496 &bull; Windsor Parke</p>
-        <p style="margin: 0 0 4px 0; font-family: Arial, sans-serif; font-size: 13px; color: #333333;"><strong>3</strong> BD &nbsp;&bull;&nbsp; <strong>2</strong> BA &nbsp;&bull;&nbsp; <strong>1,760</strong> SF &nbsp;&bull;&nbsp; Built <strong>1989</strong></p>
-        <p style="margin: 4px 0 0 0; font-family: Arial, sans-serif; font-size: 11px; color: #999999;">MLS# RX-11100001 &bull; Pool</p>
-      </td>
-    </tr>
-  </table>
-</td>
-</tr>
-</table>
+    <!-- Listing 12: $599,000 -->
+    <div class="listing-card">
+      <div class="listing-info">
+        <div class="listing-address">5070 Lake Catalina Drive C, Boca Raton</div>
+        <div class="listing-price">$599,000</div>
+        <div class="listing-sub">Catalina &bull; Condo &bull; Built 1989</div>
+        <div class="listing-mls">MLS#: RX-11152072 | 3 BD / 2 BA / 1,751 SF | Pool</div>
+      </div>
+      <div class="listing-cta">
+        <a href="https://bogenhomes.com/homes-for-sale-search-advanced/" target="_blank" class="view-listing-btn">View Details</a>
+      </div>
+    </div>
 
-<!-- LISTING 10 -->
-<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; margin-bottom: 12px;">
-<tr>
-<td style="background-color: #f8fbff; border: 1px solid #e0e8f0; border-radius: 6px; overflow: hidden;">
-  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="border-collapse: collapse;">
-    <tr>
-      <td style="background-color: #1a3e5c; padding: 12px 16px;">
-        <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="border-collapse: collapse;">
-          <tr>
-            <td style="font-family: Arial, sans-serif; font-size: 22px; font-weight: 700; color: #ffffff;">$669,000</td>
-            <td align="right" style="font-family: Arial, sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 1px; color: #8cb4d5; text-transform: uppercase;">CONDO</td>
-          </tr>
-        </table>
-      </td>
-    </tr>
-    <tr>
-      <td style="padding: 14px 16px;">
-        <p style="margin: 0 0 4px 0; font-family: Arial, sans-serif; font-size: 15px; font-weight: 700; color: #1a3e5c;">5142 Lake Catalina Drive B</p>
-        <p style="margin: 0 0 8px 0; font-family: Arial, sans-serif; font-size: 13px; color: #666666;">Boca Raton, FL 33496 &bull; Catalina</p>
-        <p style="margin: 0 0 4px 0; font-family: Arial, sans-serif; font-size: 13px; color: #333333;"><strong>3</strong> BD &nbsp;&bull;&nbsp; <strong>2.1</strong> BA &nbsp;&bull;&nbsp; <strong>2,053</strong> SF &nbsp;&bull;&nbsp; Built <strong>1989</strong></p>
-        <p style="margin: 4px 0 0 0; font-family: Arial, sans-serif; font-size: 11px; color: #999999;">MLS# RX-11164791 &bull; Pool</p>
-      </td>
-    </tr>
-  </table>
-</td>
-</tr>
-</table>
+    <!-- Listing 13: $499,000 -->
+    <div class="listing-card">
+      <div class="listing-info">
+        <div class="listing-address">5160 Lake Catalina Drive C, Boca Raton</div>
+        <div class="listing-price">$499,000</div>
+        <div class="listing-sub">Catalina &bull; Condo &bull; Built 1989</div>
+        <div class="listing-mls">MLS#: RX-11162986 | 2 BD / 2 BA / 1,837 SF | Pool</div>
+      </div>
+      <div class="listing-cta">
+        <a href="https://bogenhomes.com/homes-for-sale-search-advanced/" target="_blank" class="view-listing-btn">View Details</a>
+      </div>
+    </div>
 
-<!-- LISTING 11 -->
-<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; margin-bottom: 12px;">
-<tr>
-<td style="background-color: #f8fbff; border: 1px solid #e0e8f0; border-radius: 6px; overflow: hidden;">
-  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="border-collapse: collapse;">
-    <tr>
-      <td style="background-color: #1a3e5c; padding: 12px 16px;">
-        <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="border-collapse: collapse;">
-          <tr>
-            <td style="font-family: Arial, sans-serif; font-size: 22px; font-weight: 700; color: #ffffff;">$629,000</td>
-            <td align="right" style="font-family: Arial, sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 1px; color: #8cb4d5; text-transform: uppercase;">CONDO</td>
-          </tr>
-        </table>
-      </td>
-    </tr>
-    <tr>
-      <td style="padding: 14px 16px;">
-        <p style="margin: 0 0 4px 0; font-family: Arial, sans-serif; font-size: 15px; font-weight: 700; color: #1a3e5c;">5184 Lake Catalina Drive D</p>
-        <p style="margin: 0 0 8px 0; font-family: Arial, sans-serif; font-size: 13px; color: #666666;">Boca Raton, FL 33496 &bull; Catalina</p>
-        <p style="margin: 0 0 4px 0; font-family: Arial, sans-serif; font-size: 13px; color: #333333;"><strong>3</strong> BD &nbsp;&bull;&nbsp; <strong>2.1</strong> BA &nbsp;&bull;&nbsp; <strong>2,053</strong> SF &nbsp;&bull;&nbsp; Built <strong>1989</strong></p>
-        <p style="margin: 4px 0 0 0; font-family: Arial, sans-serif; font-size: 11px; color: #999999;">MLS# RX-11131133 &bull; Pool</p>
-      </td>
-    </tr>
-  </table>
-</td>
-</tr>
-</table>
+    <!-- Listing 14: $479,000 - PRICE REDUCED -->
+    <div class="listing-card price-reduced">
+      <div class="listing-info">
+        <div class="listing-address">5100 Lake Catalina Drive C, Boca Raton <span class="listing-badge badge-price-reduced">Price Reduced</span></div>
+        <div class="listing-price">$479,000</div>
+        <div class="listing-sub">Catalina &bull; Condo &bull; Built 1989</div>
+        <div class="listing-mls">MLS#: RX-11139065 | 3 BD / 2 BA / 2,107 SF | Pool</div>
+      </div>
+      <div class="listing-cta">
+        <a href="https://bogenhomes.com/homes-for-sale-search-advanced/" target="_blank" class="view-listing-btn">View Details</a>
+      </div>
+    </div>
 
-<!-- LISTING 12 -->
-<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; margin-bottom: 12px;">
-<tr>
-<td style="background-color: #f8fbff; border: 1px solid #e0e8f0; border-radius: 6px; overflow: hidden;">
-  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="border-collapse: collapse;">
-    <tr>
-      <td style="background-color: #1a3e5c; padding: 12px 16px;">
-        <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="border-collapse: collapse;">
-          <tr>
-            <td style="font-family: Arial, sans-serif; font-size: 22px; font-weight: 700; color: #ffffff;">$599,000</td>
-            <td align="right" style="font-family: Arial, sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 1px; color: #8cb4d5; text-transform: uppercase;">CONDO</td>
-          </tr>
-        </table>
-      </td>
-    </tr>
-    <tr>
-      <td style="padding: 14px 16px;">
-        <p style="margin: 0 0 4px 0; font-family: Arial, sans-serif; font-size: 15px; font-weight: 700; color: #1a3e5c;">5070 Lake Catalina Drive C</p>
-        <p style="margin: 0 0 8px 0; font-family: Arial, sans-serif; font-size: 13px; color: #666666;">Boca Raton, FL 33496 &bull; Catalina</p>
-        <p style="margin: 0 0 4px 0; font-family: Arial, sans-serif; font-size: 13px; color: #333333;"><strong>3</strong> BD &nbsp;&bull;&nbsp; <strong>2</strong> BA &nbsp;&bull;&nbsp; <strong>1,751</strong> SF &nbsp;&bull;&nbsp; Built <strong>1989</strong></p>
-        <p style="margin: 4px 0 0 0; font-family: Arial, sans-serif; font-size: 11px; color: #999999;">MLS# RX-11152072 &bull; Pool</p>
-      </td>
-    </tr>
-  </table>
-</td>
-</tr>
-</table>
+    <div style="text-align: center; margin-top: 40px; padding-top: 30px; border-top: 2px solid #e8e8e8;">
+      <p style="color: #666; font-size: 0.9em; margin-bottom: 15px;">Questions about The Polo Club?</p>
+      <a href="https://bogenhomes.com/agents/samantha-gornstein/" target="_blank" style="display: inline-block; background: #1a3e5c; color: white; padding: 14px 40px; text-decoration: none; font-size: 1em; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; border-radius: 4px;">Contact Samantha Gornstein</a>
+      <p style="color: #999; font-size: 0.8em; margin-top: 20px;">Samantha Gornstein | The Edmund Bogen Team | Douglas Elliman Real Estate | (561) 707-6607</p>
+      <p style="color: #bbb; font-size: 0.7em; margin-top: 15px;">Data sourced from BeachesMLS. Information deemed reliable but not guaranteed. Market data as of March 10, 2026.</p>
+    </div>
 
-<!-- LISTING 13 -->
-<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; margin-bottom: 12px;">
-<tr>
-<td style="background-color: #f8fbff; border: 1px solid #e0e8f0; border-radius: 6px; overflow: hidden;">
-  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="border-collapse: collapse;">
-    <tr>
-      <td style="background-color: #1a3e5c; padding: 12px 16px;">
-        <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="border-collapse: collapse;">
-          <tr>
-            <td style="font-family: Arial, sans-serif; font-size: 22px; font-weight: 700; color: #ffffff;">$499,000</td>
-            <td align="right" style="font-family: Arial, sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 1px; color: #8cb4d5; text-transform: uppercase;">CONDO</td>
-          </tr>
-        </table>
-      </td>
-    </tr>
-    <tr>
-      <td style="padding: 14px 16px;">
-        <p style="margin: 0 0 4px 0; font-family: Arial, sans-serif; font-size: 15px; font-weight: 700; color: #1a3e5c;">5160 Lake Catalina Drive C</p>
-        <p style="margin: 0 0 8px 0; font-family: Arial, sans-serif; font-size: 13px; color: #666666;">Boca Raton, FL 33496 &bull; Catalina</p>
-        <p style="margin: 0 0 4px 0; font-family: Arial, sans-serif; font-size: 13px; color: #333333;"><strong>2</strong> BD &nbsp;&bull;&nbsp; <strong>2</strong> BA &nbsp;&bull;&nbsp; <strong>1,837</strong> SF &nbsp;&bull;&nbsp; Built <strong>1989</strong></p>
-        <p style="margin: 4px 0 0 0; font-family: Arial, sans-serif; font-size: 11px; color: #999999;">MLS# RX-11162986 &bull; Pool</p>
-      </td>
-    </tr>
-  </table>
-</td>
-</tr>
-</table>
-
-<!-- LISTING 14 - PRICE REDUCED -->
-<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; margin-bottom: 12px;">
-<tr>
-<td style="background-color: #f8fbff; border: 1px solid #e0e8f0; border-radius: 6px; overflow: hidden;">
-  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="border-collapse: collapse;">
-    <tr>
-      <td style="background-color: #1a3e5c; padding: 12px 16px;">
-        <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="border-collapse: collapse;">
-          <tr>
-            <td>
-              <span style="font-family: Arial, sans-serif; font-size: 22px; font-weight: 700; color: #ffffff;">$479,000</span>
-              <span style="font-family: Arial, sans-serif; font-size: 10px; font-weight: 700; color: #ffffff; background-color: #cc0000; padding: 3px 8px; border-radius: 3px; margin-left: 8px;">PRICE REDUCED</span>
-            </td>
-            <td align="right" style="font-family: Arial, sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 1px; color: #8cb4d5; text-transform: uppercase;">CONDO</td>
-          </tr>
-        </table>
-      </td>
-    </tr>
-    <tr>
-      <td style="padding: 14px 16px;">
-        <p style="margin: 0 0 4px 0; font-family: Arial, sans-serif; font-size: 15px; font-weight: 700; color: #1a3e5c;">5100 Lake Catalina Drive C</p>
-        <p style="margin: 0 0 8px 0; font-family: Arial, sans-serif; font-size: 13px; color: #666666;">Boca Raton, FL 33496 &bull; Catalina</p>
-        <p style="margin: 0 0 4px 0; font-family: Arial, sans-serif; font-size: 13px; color: #333333;"><strong>3</strong> BD &nbsp;&bull;&nbsp; <strong>2</strong> BA &nbsp;&bull;&nbsp; <strong>2,107</strong> SF &nbsp;&bull;&nbsp; Built <strong>1989</strong></p>
-        <p style="margin: 4px 0 0 0; font-family: Arial, sans-serif; font-size: 11px; color: #999999;">MLS# RX-11139065 &bull; Pool</p>
-      </td>
-    </tr>
-  </table>
-</td>
-</tr>
-</table>
-
-</td>
-</tr>
-
-<!-- ============================================ -->
-<!-- CTA SECTION -->
-<!-- ============================================ -->
-<tr>
-<td style="background-color: #ffffff; padding: 24px 30px; text-align: center;">
-  <p style="margin: 0 0 16px 0; font-family: Arial, sans-serif; font-size: 16px; font-weight: 700; color: #1a3e5c;">Interested in Any of These Properties?</p>
-  <p style="margin: 0 0 20px 0; font-family: Arial, sans-serif; font-size: 14px; color: #666666; line-height: 1.6;">Contact Samantha Gornstein and The Edmund Bogen Team for private showings, market analysis, or to discuss your Polo Club real estate goals.</p>
-  <a href="mailto:samantha@bogenhomes.com" style="display: inline-block; background-color: #1a3e5c; color: #ffffff; font-family: Arial, sans-serif; font-size: 14px; font-weight: 700; text-decoration: none; padding: 14px 35px; border-radius: 4px; letter-spacing: 0.5px;">SCHEDULE A SHOWING</a>
-  <p style="margin: 16px 0 0 0;">
-    <a href="index.html" style="font-family: Arial, sans-serif; font-size: 13px; color: #00a8e1; text-decoration: none;">&larr; Back to Newsletter</a>
-    &nbsp;&nbsp;&bull;&nbsp;&nbsp;
-    <a href="article.html" style="font-family: Arial, sans-serif; font-size: 13px; color: #00a8e1; text-decoration: none;">Read the Featured Article &rarr;</a>
-  </p>
-</td>
-</tr>
-
-<!-- ============================================ -->
-<!-- SAMANTHA BIO SECTION -->
-<!-- ============================================ -->
-<tr>
-<td style="background-color: #ffffff; padding: 30px; border-top: 3px solid #00a8e1;">
-  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
-    <tr>
-      <td class="bio-cell" width="170" style="vertical-align: top; padding-right: 20px;">
-        <img src="images/Samantha Golf Article.png" alt="Samantha Gornstein" class="bio-photo" width="150" height="150" style="border: 0; outline: none; text-decoration: none; -ms-interpolation-mode: bicubic; display: block; width: 150px; height: 150px; border-radius: 50%; margin: 0 auto; object-fit: cover; object-position: center top;">
-      </td>
-      <td class="bio-cell" style="vertical-align: top;">
-        <h3 style="margin: 0 0 4px 0; font-family: Arial, sans-serif; font-size: 18px; font-weight: 700; color: #1a3e5c;">Samantha Gornstein</h3>
-        <p style="margin: 0 0 4px 0; font-family: Arial, sans-serif; font-size: 13px; color: #666666;">Licensed Real Estate Salesperson</p>
-        <p style="margin: 0 0 12px 0; font-family: Arial, sans-serif; font-size: 13px; color: #666666;">The Edmund Bogen Team at Douglas Elliman</p>
-        <p style="margin: 0 0 8px 0; font-family: Arial, sans-serif; font-size: 13px; color: #333333; line-height: 1.5;">Specializing in Boca Raton's premier luxury gated communities. Data-driven market intelligence for discerning buyers and sellers.</p>
-        <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
-          <tr>
-            <td class="btn-cell" style="padding-right: 8px;">
-              <a href="tel:5617076607" style="display: inline-block; background-color: #1a3e5c; color: #ffffff; font-family: Arial, sans-serif; font-size: 12px; font-weight: 700; text-decoration: none; padding: 8px 16px; border-radius: 4px;">561-707-6607</a>
-            </td>
-            <td class="btn-cell">
-              <a href="mailto:samantha@bogenhomes.com" style="display: inline-block; background-color: #00a8e1; color: #ffffff; font-family: Arial, sans-serif; font-size: 12px; font-weight: 700; text-decoration: none; padding: 8px 16px; border-radius: 4px;">samantha@bogenhomes.com</a>
-            </td>
-          </tr>
-        </table>
-      </td>
-    </tr>
-  </table>
-</td>
-</tr>
-
-<!-- ============================================ -->
-<!-- FOOTER -->
-<!-- ============================================ -->
-<tr>
-<td style="background: linear-gradient(135deg, #1a3e5c 0%, #0d2137 100%); padding: 24px 30px; text-align: center;">
-  <p style="margin: 0 0 6px 0; font-family: Arial, sans-serif; font-size: 14px; font-weight: 700; color: #ffffff;">The Edmund Bogen Team</p>
-  <p style="margin: 0 0 4px 0; font-family: Arial, sans-serif; font-size: 12px; color: #8cb4d5;">at Douglas Elliman Real Estate</p>
-  <p style="margin: 0 0 12px 0; font-family: Arial, sans-serif; font-size: 11px; color: #8cb4d5;">1111 Lincoln Rd, Miami Beach, FL 33139 | 305.695.6300</p>
-  <p style="margin: 0 0 8px 0; font-family: Arial, sans-serif; font-size: 10px; color: #8cb4d5; line-height: 1.4;">Data sourced from BeachesMLS. Information deemed reliable but not guaranteed.<br>Market data as of March 10, 2026.</p>
-</td>
-</tr>
-
-<!-- ============================================ -->
-<!-- LEGAL DISCLAIMER -->
-<!-- ============================================ -->
-<tr>
-<td style="background-color: #0d2137; padding: 20px 30px; text-align: center; border-top: 1px solid #1a3e5c;">
-  <p style="margin: 0; font-family: Arial, sans-serif; font-size: 9px; color: #6a8fad; line-height: 1.5;">&copy; 2018 DOUGLAS ELLIMAN REAL ESTATE. ALL MATERIAL PRESENTED HEREIN IS INTENDED FOR INFORMATION PURPOSES ONLY. WHILE, THIS INFORMATION IS BELIEVED TO BE CORRECT, IT IS REPRESENTED SUBJECT TO ERRORS, OMISSIONS, CHANGES OR WITHDRAWAL WITHOUT NOTICE. ALL PROPERTY INFORMATION, INCLUDING, BUT NOT LIMITED TO SQUARE FOOTAGE, ROOM COUNT, NUMBER OF BEDROOMS AND THE SCHOOL DISTRICT IN PROPERTY LISTINGS SHOULD BE VERIFIED BY YOUR OWN ATTORNEY, ARCHITECT OR ZONING EXPERT. IF YOUR PROPERTY IS CURRENTLY LISTED WITH ANOTHER REAL ESTATE BROKER, PLEASE DISREGARD THIS OFFER. IT IS NOT OUR INTENTION TO SOLICIT THE OFFERINGS OF OTHER REAL ESTATE BROKERS. WE COOPERATE WITH THEM FULLY. EQUAL HOUSING OPPORTUNITY.</p>
-</td>
-</tr>
-
-</table>
-<!-- End email container -->
-
-</td>
-</tr>
-</table>
-<!-- End outer wrapper -->
-
+  </div>
 </body>
 </html>
