@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0d2137"/>
+      <stop offset="40%" stop-color="#1a3e5c"/>
+      <stop offset="70%" stop-color="#2a6496"/>
+      <stop offset="100%" stop-color="#4a90c4"/>
+    </linearGradient>
+    <linearGradient id="sun" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
+      <stop offset="0%" stop-color="#f5c842" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#e8943a" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Sky background -->
+  <rect width="1200" height="400" fill="url(#sky)"/>
+
+  <!-- Sun glow -->
+  <circle cx="900" cy="320" r="120" fill="#f5c842" opacity="0.15"/>
+  <circle cx="900" cy="320" r="80" fill="#f5c842" opacity="0.2"/>
+  <circle cx="900" cy="340" r="50" fill="#f5c842" opacity="0.3"/>
+
+  <!-- Distant palm 1 (left) -->
+  <g opacity="0.3" transform="translate(100, 0)">
+    <path d="M80 400 L85 280 L90 400Z" fill="#0a1a2a"/>
+    <path d="M85 285 Q60 260 20 270 Q55 255 85 280Z" fill="#0a1a2a"/>
+    <path d="M85 280 Q50 240 10 235 Q50 230 85 275Z" fill="#0a1a2a"/>
+    <path d="M85 280 Q110 255 150 260 Q115 250 85 275Z" fill="#0a1a2a"/>
+    <path d="M85 275 Q120 235 160 225 Q120 228 85 270Z" fill="#0a1a2a"/>
+    <path d="M85 280 Q75 245 55 220 Q78 238 85 275Z" fill="#0a1a2a"/>
+  </g>
+
+  <!-- Distant palm 2 (right) -->
+  <g opacity="0.25" transform="translate(1000, 20)">
+    <path d="M80 380 L85 270 L90 380Z" fill="#0a1a2a"/>
+    <path d="M85 275 Q55 245 15 255 Q50 240 85 270Z" fill="#0a1a2a"/>
+    <path d="M85 270 Q45 225 5 215 Q45 215 85 265Z" fill="#0a1a2a"/>
+    <path d="M85 270 Q115 240 155 245 Q120 235 85 265Z" fill="#0a1a2a"/>
+    <path d="M85 265 Q125 220 165 210 Q125 215 85 260Z" fill="#0a1a2a"/>
+    <path d="M85 270 Q70 230 50 205 Q72 225 85 265Z" fill="#0a1a2a"/>
+  </g>
+
+  <!-- Main palm tree left -->
+  <g transform="translate(250, 0)">
+    <!-- Trunk -->
+    <path d="M95 400 Q100 320 110 240 Q115 200 105 160 L115 160 Q120 200 120 240 Q115 320 110 400Z" fill="#1a3520" opacity="0.7"/>
+    <!-- Fronds -->
+    <path d="M110 165 Q70 130 15 140 Q60 115 110 155Z" fill="#1a4a25" opacity="0.6"/>
+    <path d="M110 160 Q55 105 0 85 Q55 90 110 150Z" fill="#1a4a25" opacity="0.6"/>
+    <path d="M110 160 Q150 125 200 130 Q155 112 110 150Z" fill="#1a4a25" opacity="0.6"/>
+    <path d="M110 155 Q165 100 215 80 Q165 90 110 145Z" fill="#1a4a25" opacity="0.6"/>
+    <path d="M110 160 Q95 110 80 65 Q100 105 110 150Z" fill="#1a4a25" opacity="0.6"/>
+    <path d="M110 155 Q130 95 145 50 Q125 95 110 145Z" fill="#1a4a25" opacity="0.6"/>
+  </g>
+
+  <!-- Main palm tree right -->
+  <g transform="translate(800, 0)">
+    <!-- Trunk with slight curve -->
+    <path d="M90 400 Q85 310 80 230 Q78 190 85 140 L95 140 Q92 190 90 230 Q92 310 100 400Z" fill="#1a3520" opacity="0.65"/>
+    <!-- Fronds -->
+    <path d="M88 145 Q50 110 -5 120 Q40 95 88 135Z" fill="#1a4a25" opacity="0.55"/>
+    <path d="M88 140 Q35 80 -20 55 Q35 65 88 130Z" fill="#1a4a25" opacity="0.55"/>
+    <path d="M88 140 Q130 105 185 110 Q135 90 88 130Z" fill="#1a4a25" opacity="0.55"/>
+    <path d="M88 135 Q145 75 200 55 Q150 70 88 125Z" fill="#1a4a25" opacity="0.55"/>
+    <path d="M88 140 Q75 85 65 35 Q80 80 88 130Z" fill="#1a4a25" opacity="0.55"/>
+    <path d="M88 135 Q105 70 120 20 Q100 70 88 125Z" fill="#1a4a25" opacity="0.55"/>
+  </g>
+
+  <!-- Center palm (smaller, background) -->
+  <g opacity="0.4" transform="translate(550, 30)">
+    <path d="M55 370 Q58 290 62 220 Q63 190 60 155 L68 155 Q70 190 70 220 Q67 290 65 370Z" fill="#0f2818"/>
+    <path d="M63 160 Q35 130 -5 138 Q30 118 63 150Z" fill="#0f3018"/>
+    <path d="M63 155 Q25 100 -15 80 Q25 85 63 145Z" fill="#0f3018"/>
+    <path d="M63 155 Q95 120 140 125 Q100 108 63 145Z" fill="#0f3018"/>
+    <path d="M63 150 Q105 90 150 70 Q108 85 63 140Z" fill="#0f3018"/>
+    <path d="M63 155 Q55 105 45 60 Q58 100 63 145Z" fill="#0f3018"/>
+  </g>
+
+  <!-- Ground/horizon line -->
+  <rect x="0" y="380" width="1200" height="20" fill="#0a1a2a" opacity="0.4"/>
+</svg>
